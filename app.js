@@ -7,9 +7,13 @@ import subscriptionRouter from './routes/subscription.routes.js'
 import connectDB from './database/mongodb.js'
 import errorMiddleware from './middlewares/error.middleware.js'
 import cookieParser from 'cookie-parser'
+import limiter from './middlewares/rate-limit.middleware.js'
 
 
 const app = express()
+
+app.use(limiter)
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
