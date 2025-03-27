@@ -12,7 +12,7 @@ import rateLimitWithBotDetection from './middlewares/rate-limit.middleware.js'
 
 const app = express()
 
-app.use(rateLimitWithBotDetection)
+// app.use(rateLimitWithBotDetection)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))

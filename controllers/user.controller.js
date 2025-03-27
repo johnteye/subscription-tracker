@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import bcrypt from "bcryptjs";
 
 
 
@@ -10,7 +11,6 @@ export const getUsers = async (req, res, next) => {
       success: true,
       data: users,
     });
-
 
   } catch (error) {
     next(error);
